@@ -1,9 +1,9 @@
 export const Bio = {
   name: "Israel Ogunsola",
   roles: [
-    "Full Stack Web3 Developer",
-    "Software Developer",
-    "Web3 Developer"
+    "Full Stack Developer",
+    "Web3 Developer",
+    "Software Developer"
     
   ],
   description:
