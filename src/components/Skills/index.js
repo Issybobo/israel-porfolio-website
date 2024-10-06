@@ -127,8 +127,12 @@ const Skills = () => {
         <Desc>Here are some of my skills and services  that i offer as fullstack web3 developer.
         </Desc>
         <SkillsContainer>
+<<<<<<< HEAD
         {
           skills.map((skill) => (
+=======
+          {skills.map((skill) => (
+>>>>>>> 8ac25a16aaf05053e24123c89265eb486f97dcd3
             <Skill>
               <SkillTitle>{skill.title}</SkillTitle>
               <SkillList>
