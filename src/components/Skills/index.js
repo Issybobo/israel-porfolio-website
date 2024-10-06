@@ -124,20 +124,14 @@ const Skills = () => {
     <Container id="skills">
       <Wrapper>
         <Title>Skills</Title>
-        <Desc>Here are some of my skills and services  that i offer as fullstack web3 developer.
-        </Desc>
+        <Desc>Here are some of my skills and services that I offer as a fullstack web3 developer.</Desc>
         <SkillsContainer>
-<<<<<<< HEAD
-        {
-          skills.map((skill) => (
-=======
           {skills.map((skill) => (
->>>>>>> 8ac25a16aaf05053e24123c89265eb486f97dcd3
-            <Skill>
+            <Skill key={skill.title}>
               <SkillTitle>{skill.title}</SkillTitle>
               <SkillList>
                 {skill.skills.map((item) => (
-                  <SkillItem>
+                  <SkillItem key={item.name}>
                     <SkillImage src={item.image}/>
                     {item.name}
                   </SkillItem>
