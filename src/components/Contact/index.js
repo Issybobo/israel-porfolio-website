@@ -126,16 +126,18 @@ const Contact = () => {
 
   //hooks
   const [open, setOpen] = React.useState(false);
+  const [error, setError] = React.useState('');
   const form = useRef();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    emailjs.sendForm('service_a7i71cf', 'template_z9l2jq8', form.current, '2HDcw1SvZF4T2Iv6q')
+    emailjs.sendForm('service_8idof5g', 'template_z9l2jq8', form.current, '2HDcw1SvZF4T2Iv6q')
       .then((result) => {
         setOpen(true);
         form.current.reset();
       }, (error) => {
-        console.log(error.text);
+        console.error('Failed to send email:', error);
+        setError('Failed to send email. Please try again later.');
       });
   }
 
@@ -148,16 +150,17 @@ const Contact = () => {
         <Desc>Feel free to reach out to me for any questions or opportunities!</Desc>
         <ContactForm ref={form} onSubmit={handleSubmit}>
           <ContactTitle>Email Me 🚀</ContactTitle>
-          <ContactInput placeholder="Your Email" name="from_email" />
-          <ContactInput placeholder="Your Name" name="from_name" />
-          <ContactInput placeholder="Subject" name="subject" />
-          <ContactInputMessage placeholder="Message" rows="4" name="message" />
+          <ContactInput placeholder="Your Email" name="from_email" required />
+          <ContactInput placeholder="Your Name" name="from_name" required />
+          <ContactInput placeholder="Subject" name="subject" required />
+          <ContactInputMessage placeholder="Message" rows="4" name="message" required />
           <ContactButton type="submit" value="Send" />
         </ContactForm>
+        {error && <p style={{ color: 'red' }}>{error}</p>}
         <Snackbar
           open={open}
           autoHideDuration={6000}
-          onClose={()=>setOpen(false)}
+          onClose={() => setOpen(false)}
           message="Email sent successfully!"
           severity="success"
         />
