@@ -1,10 +1,10 @@
 import React from 'react'
 import HeroBgAnimation from '../HeroBgAnimation'
  // eslint-disable-next-line
-import { HeroContainer, HeroBg, HeroLeftContainer, Img, HeroRightContainer, HeroInnerContainer, TextLoop, Title, Span, SubTitle,SocialMediaIcons,SocialMediaIcon, ResumeButton } from './HeroStyle'
+import { HeroContainer, HeroBg, HeroLeftContainer, Img,  HeroRightContainer, HeroInnerContainer, TextLoop, Title, Span, SubTitle,SocialMediaIcons,SocialMediaIcon, ResumeButton } from './HeroStyle'
 //import HeroImg from '../../images/HeroImage.jpg'
 
-import mypic from '../../images/mypic.png'
+import portfolioImage from '../../images/portfolio-image.jpg'
 import Typewriter from 'typewriter-effect';
 import { Bio } from '../../data/constants';
 
@@ -35,8 +35,9 @@ const HeroSection = () => {
                     </HeroLeftContainer>
 
                     <HeroRightContainer id="Right">
-
-                        <Img src={mypic} alt="my-pic" />
+                
+                  <Img src={portfolioImage} alt="portfolio-image" />
+                         {/* <Img src={mypic} alt="my-pic" />  */}
                     </HeroRightContainer>
                 </HeroInnerContainer>
 
